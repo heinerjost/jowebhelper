@@ -15,4 +15,10 @@ public class StaatenTest
 		});
 	}
 
+	@Test
+	public void test02()
+	{
+		System.out.println(Staaten.getBySchluessel(0).getBezeichnung());
+	}
+
 }

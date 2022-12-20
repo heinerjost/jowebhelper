@@ -212,4 +212,13 @@ public class Staaten
 		staaten.add(new Staat("Vietnam", "VN", "VNM", 432));
 		staaten.add(new Staat("Zentralafrikanische Republik", "CF", "CAF", 289));
 	}
+
+	public static Staat getBySchluessel(int schluessel)
+	{
+		return staaten.stream().filter(st -> st.getSchluessel() == schluessel)
+				.reduce((a, b) ->
+				{
+					throw new IllegalStateException("Multiple elements: " + a + ", " + b);
+				}).get();
+	}
 }
