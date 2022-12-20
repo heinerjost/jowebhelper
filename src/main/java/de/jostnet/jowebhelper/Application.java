@@ -22,7 +22,9 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @NpmPackage(value = "@vaadin-component-factory/vcf-nav", version = "1.0.6")
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
-    public static void main(String[] args) {
+    private static final long serialVersionUID = 1L;
+
+		public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
