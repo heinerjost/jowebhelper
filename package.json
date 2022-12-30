@@ -84,7 +84,7 @@
     "proj4": "2.8.0"
   },
   "devDependencies": {
-    "@rollup/plugin-replace": "3.1.0",
+    "@rollup/plugin-replace": "5.0.1",
     "@rollup/pluginutils": "4.1.0",
     "async": "3.2.2",
     "glob": "7.2.3",
@@ -93,11 +93,11 @@
     "strip-css-comments": "5.0.0",
     "transform-ast": "2.4.4",
     "typescript": "4.9.3",
-    "vite": "v4.0.0",
-    "vite-plugin-checker": "0.5.1",
+    "vite": "4.0.2",
+    "vite-plugin-checker": "0.5.2",
     "workbox-build": "6.5.0",
-    "workbox-core": "6.5.0",
-    "workbox-precaching": "6.5.0"
+    "workbox-core": "6.5.4",
+    "workbox-precaching": "6.5.4"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -263,7 +263,7 @@
       "proj4": "2.8.0"
     },
     "devDependencies": {
-      "@rollup/plugin-replace": "3.1.0",
+      "@rollup/plugin-replace": "5.0.1",
       "@rollup/pluginutils": "4.1.0",
       "async": "3.2.2",
       "glob": "7.2.3",
@@ -272,11 +272,11 @@
       "strip-css-comments": "5.0.0",
       "transform-ast": "2.4.4",
       "typescript": "4.9.3",
-      "vite": "v4.0.0",
-      "vite-plugin-checker": "0.5.1",
+      "vite": "4.0.2",
+      "vite-plugin-checker": "0.5.2",
       "workbox-build": "6.5.0",
-      "workbox-core": "6.5.0",
-      "workbox-precaching": "6.5.0"
+      "workbox-core": "6.5.4",
+      "workbox-precaching": "6.5.4"
     },
     "hash": "27e65541a36b5e47fc36cc4c95deb98032a9d4e654b73e0c9700cd047e4a7997"
   }
