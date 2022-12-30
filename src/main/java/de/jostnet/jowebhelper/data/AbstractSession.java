@@ -6,18 +6,14 @@ import de.jostnet.jowebhelper.security.AbstractAuthenticatedUser;
 import lombok.Getter;
 import lombok.Setter;
 
-<<<<<<< HEAD
-public abstract class AbstractSession<MANDANT extends IMandant,
-		BENUTZER extends IBenutzer<MANDANT>>
+public abstract class AbstractSession<MANDANT extends IMandant, BENUTZER extends IBenutzer<MANDANT>>
 {
 	@Getter
 	@Setter
 	private AbstractAuthenticatedUser<MANDANT, BENUTZER> authenticatedUser;
-
-	public AbstractSession(
-			AbstractAuthenticatedUser<MANDANT, BENUTZER> authenticatedUser)
-	{
-		this.authenticatedUser = authenticatedUser;
+	
+	public AbstractSession(AbstractAuthenticatedUser<MANDANT, BENUTZER> authenticatedUser) {
+		this.authenticatedUser=authenticatedUser;
 	}
 
 	/**
@@ -27,21 +23,6 @@ public abstract class AbstractSession<MANDANT extends IMandant,
 	private BENUTZER benutzer;
 
 	public BENUTZER getBenutzer()
-=======
-public abstract class AbstractSession<MANDANT extends IMandant, BENUTZER extends IBenutzer<MANDANT>>
-{
-	@Getter
-	@Setter
-	private AbstractAuthenticatedUser<MANDANT, BENUTZER> authenticatedUser;
-
-	/**
-	 * Für Testzwecke kann der Benutzer direkt übergeben werden.
-	 */
-	@Setter
-	private IBenutzer<MANDANT> benutzer;
-
-	public IBenutzer<MANDANT> getBenutzer()
->>>>>>> branch 'main' of git@github.com:heinerjost/jowebhelper.git
 	{
 		if (authenticatedUser != null)
 		{
