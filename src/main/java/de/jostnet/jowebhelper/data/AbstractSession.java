@@ -6,14 +6,17 @@ import de.jostnet.jowebhelper.security.AbstractAuthenticatedUser;
 import lombok.Getter;
 import lombok.Setter;
 
-public abstract class AbstractSession<MANDANT extends IMandant, BENUTZER extends IBenutzer<MANDANT>>
+public abstract class AbstractSession<MANDANT extends IMandant,
+		BENUTZER extends IBenutzer<MANDANT>>
 {
 	@Getter
 	@Setter
 	private AbstractAuthenticatedUser<MANDANT, BENUTZER> authenticatedUser;
-	
-	public AbstractSession(AbstractAuthenticatedUser<MANDANT, BENUTZER> authenticatedUser) {
-		this.authenticatedUser=authenticatedUser;
+
+	public AbstractSession(
+			AbstractAuthenticatedUser<MANDANT, BENUTZER> authenticatedUser)
+	{
+		this.authenticatedUser = authenticatedUser;
 	}
 
 	/**

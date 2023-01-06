@@ -11,7 +11,7 @@ import java.util.Locale;
 public class DateTool
 {
 
-	public final static String format(DateTimeFormatter formatter, LocalDate date,
+	public static final String format(DateTimeFormatter formatter, LocalDate date,
 			String nullvalue)
 	{
 		if (date != null)
@@ -24,7 +24,7 @@ public class DateTool
 		}
 	}
 
-	public final static LocalDate parse(DateTimeFormatter formatter,
+	public static final LocalDate parse(DateTimeFormatter formatter,
 			String datestring)
 	{
 		try
@@ -37,7 +37,7 @@ public class DateTool
 		}
 	}
 
-	public final static LocalDate parseWithException(DateTimeFormatter formatter,
+	public static final LocalDate parseWithException(DateTimeFormatter formatter,
 			String datestring) throws DateTimeParseException
 	{
 		if (datestring == null || datestring.length() == 0)
@@ -47,7 +47,7 @@ public class DateTool
 		return LocalDate.parse(datestring, formatter);
 	}
 
-	public final static LocalDateTime parseLocalDateTimeWithException(
+	public static final LocalDateTime parseLocalDateTimeWithException(
 			DateTimeFormatter formatter, String datestring)
 			throws DateTimeParseException
 	{
@@ -58,7 +58,7 @@ public class DateTool
 		return LocalDateTime.parse(datestring, formatter);
 	}
 
-	public final static int getWeekNumber(LocalDate datum)
+	public static final int getWeekNumber(LocalDate datum)
 	{
 		TemporalField woy = WeekFields.of(Locale.getDefault())
 				.weekOfWeekBasedYear();

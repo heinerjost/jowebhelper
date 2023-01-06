@@ -17,11 +17,8 @@ public class HelpButton extends Button
 	public HelpButton(Class<? extends Component> component)
 	{
 		super("Hilfe", getIcn());
-		addClickListener(e ->
-		{
-			UI.getCurrent().getPage().open(
-					RouteConfiguration.forApplicationScope().getUrl(component), "blank_");
-		});
+		addClickListener(e -> UI.getCurrent().getPage().open(
+				RouteConfiguration.forApplicationScope().getUrl(component), "blank_"));
 		addClickShortcut(Key.F1);
 		addClickShortcut(Key.F1, KeyModifier.ALT_GRAPH);
 

@@ -10,6 +10,9 @@ import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class HelpDialog extends Dialog
 {
 	private static final long serialVersionUID = 1L;
@@ -58,8 +61,7 @@ public class HelpDialog extends Dialog
 				| IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e)
 		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("Fehler", e);
 		}
 		if (!isOpened())
 		{
@@ -73,10 +75,7 @@ public class HelpDialog extends Dialog
 		Button button = new Button(title);
 		button.addThemeVariants(ButtonVariant.LUMO_SMALL,
 				ButtonVariant.LUMO_TERTIARY);
-		button.addClickListener(e ->
-		{
-			show(help);
-		});
+		button.addClickListener(e -> show(help));
 		menu.add(button);
 	}
 

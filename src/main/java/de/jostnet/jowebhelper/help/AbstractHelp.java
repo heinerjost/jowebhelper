@@ -102,10 +102,7 @@ public abstract class AbstractHelp extends VerticalLayout
 		Button button = new Button(label);
 		button.addThemeVariants(ButtonVariant.LUMO_TERTIARY,
 				ButtonVariant.LUMO_SMALL);
-		button.addClickListener(e ->
-		{
-			helpDialog.show(component);
-		});
+		button.addClickListener(e -> helpDialog.show(component));
 		return button;
 	}
 

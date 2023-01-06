@@ -233,5 +233,5 @@ public abstract class AbstractView<BEAN extends AbstractEntity,
 	}
 
 	public abstract Class<? extends AbstractHelp> getHelpClass();
-
+	
 }

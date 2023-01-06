@@ -131,10 +131,7 @@ public abstract class ViewDialogTool<BEAN extends AbstractEntity,
 		if (binder.hasChanges())
 		{
 			ConfirmDialog cd = getConfirmDialog();
-			cd.addConfirmListener(e1 ->
-			{
-				fireCanceledEvent();
-			});
+			cd.addConfirmListener(e1 -> fireCanceledEvent());
 		}
 		else
 		{
