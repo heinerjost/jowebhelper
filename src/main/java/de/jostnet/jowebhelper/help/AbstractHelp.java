@@ -5,9 +5,10 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.AnchorTarget;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H4;
-import com.vaadin.flow.component.html.H5;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.ListItem;
 import com.vaadin.flow.component.html.OrderedList;
@@ -29,22 +30,22 @@ public abstract class AbstractHelp extends VerticalLayout
 
 	public void helpSuperHeader(String header)
 	{
-		add(new H3(header));
+		add(new H1(header));
 	}
 
 	public void helpMainHeader(String header)
 	{
-		add(new H4(header));
+		add(new H2(header));
 	}
 
 	public void helpSubHeader(String header)
 	{
-		add(new H5(header));
+		add(new H3(header));
 	}
 
 	public void helpSubHeader(Component... components)
 	{
-		add(new H5(components));
+		add(new H3(components));
 	}
 
 	public void helpComponent(Component component)

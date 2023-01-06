@@ -8,6 +8,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.Scroller;
+import com.vaadin.flow.component.orderedlayout.Scroller.ScrollDirection;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import lombok.extern.slf4j.Slf4j;
@@ -33,13 +35,18 @@ public class HelpDialog extends Dialog
 		setHeaderTitle("Hilfe");
 		setResizable(true);
 
+		layout.setHeightFull();
+
 		menu.setMargin(false);
 		menu.setSpacing(false);
 		menu.setPadding(false);
 
 		menu.setWidth("350px");
 		menu.setMaxWidth("350px");
-		layout.add(menu);
+
+		Scroller menuScroller = new Scroller(menu);
+		menuScroller.setScrollDirection(ScrollDirection.VERTICAL);
+		layout.add(menuScroller);
 		content.setWidthFull();
 
 		layout.add(content);
