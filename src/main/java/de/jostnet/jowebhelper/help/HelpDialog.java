@@ -53,13 +53,17 @@ public class HelpDialog extends Dialog
 		add(layout);
 	}
 
-	public void show(Class<? extends AbstractHelp> help)
+	public void show(Class<? extends AbstractHelp> help, String param)
 	{
 		content.removeAll();
 		try
 		{
 			AbstractHelp h = help.getDeclaredConstructor(this.getClass())
 					.newInstance(this);
+			if (param != null)
+			{
+				h.setParameter(param);
+			}
 			h.setWidth("650px");
 			content.add(h);
 			highlightButton(help);
@@ -82,7 +86,7 @@ public class HelpDialog extends Dialog
 		Button button = new Button(title);
 		button.addThemeVariants(ButtonVariant.LUMO_SMALL,
 				ButtonVariant.LUMO_TERTIARY);
-		button.addClickListener(e -> show(help));
+		button.addClickListener(e -> show(help, null));
 		menu.add(button);
 	}
 

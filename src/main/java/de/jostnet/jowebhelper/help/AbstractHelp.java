@@ -8,7 +8,6 @@ import com.vaadin.flow.component.html.AnchorTarget;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.ListItem;
 import com.vaadin.flow.component.html.OrderedList;
@@ -26,6 +25,14 @@ public abstract class AbstractHelp extends VerticalLayout
 	public AbstractHelp(HelpDialog helpDialog)
 	{
 		this.helpDialog = helpDialog;
+	}
+
+	/** 
+	 * Kann von einzelnen Klassen überschrieben werden
+	 */
+	public void setParameter(String param)
+	{
+		//
 	}
 
 	public void helpSuperHeader(String header)
@@ -103,7 +110,17 @@ public abstract class AbstractHelp extends VerticalLayout
 		Button button = new Button(label);
 		button.addThemeVariants(ButtonVariant.LUMO_TERTIARY,
 				ButtonVariant.LUMO_SMALL);
-		button.addClickListener(e -> helpDialog.show(component));
+		button.addClickListener(e -> helpDialog.show(component,null));
+		return button;
+	}
+
+	public Button helpLink(String label, Class<? extends AbstractHelp> component,
+			String param)
+	{
+		Button button = new Button(label);
+		button.addThemeVariants(ButtonVariant.LUMO_TERTIARY,
+				ButtonVariant.LUMO_SMALL);
+		button.addClickListener(e -> helpDialog.show(component, param));
 		return button;
 	}
 
