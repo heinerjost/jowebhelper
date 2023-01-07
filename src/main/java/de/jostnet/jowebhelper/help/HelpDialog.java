@@ -29,7 +29,8 @@ public class HelpDialog extends Dialog
 
 	public HelpDialog()
 	{
-		setMaxWidth("1000px");
+		setMaxWidth("1500px");
+		setWidth("90%");
 
 		setDraggable(true);
 		setHeaderTitle("Hilfe");
@@ -41,15 +42,18 @@ public class HelpDialog extends Dialog
 		menu.setSpacing(false);
 		menu.setPadding(false);
 
-		menu.setWidth("350px");
-		menu.setMaxWidth("350px");
+		menu.setWidthFull();
 
 		Scroller menuScroller = new Scroller(menu);
+		menuScroller.setMinWidth("300px");
 		menuScroller.setScrollDirection(ScrollDirection.VERTICAL);
 		layout.add(menuScroller);
+		
+		Scroller contentScroller = new Scroller(content);
+		contentScroller.setScrollDirection(ScrollDirection.VERTICAL);
 		content.setWidthFull();
+		layout.add(contentScroller);
 
-		layout.add(content);
 		add(layout);
 	}
 
@@ -64,7 +68,7 @@ public class HelpDialog extends Dialog
 			{
 				h.setParameter(param);
 			}
-			h.setWidth("650px");
+			h.setWidthFull();
 			content.add(h);
 			highlightButton(help);
 		}
