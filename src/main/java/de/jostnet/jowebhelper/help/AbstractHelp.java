@@ -15,19 +15,24 @@ import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-public abstract class AbstractHelp extends VerticalLayout
+import de.jostnet.jowebhelper.interfaces.IBenutzer;
+import de.jostnet.jowebhelper.interfaces.IMandant;
+
+public abstract class AbstractHelp<MANDANT extends IMandant,
+		BENUTZER extends IBenutzer<MANDANT>> extends VerticalLayout
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private HelpDialog helpDialog;
+	private HelpDialog<MANDANT, BENUTZER> helpDialog;
 
-	public AbstractHelp(HelpDialog helpDialog)
+	public AbstractHelp(HelpDialog<MANDANT, BENUTZER> helpDialog)
 	{
 		this.helpDialog = helpDialog;
+		this.setWidthFull();
 	}
 
-	/** 
+	/**
 	 * Kann von einzelnen Klassen überschrieben werden
 	 */
 	public void setParameter(String param)
@@ -105,22 +110,23 @@ public abstract class AbstractHelp extends VerticalLayout
 		helpParagraph("Wird ergänzt!");
 	}
 
-	public Button helpLink(String label, Class<? extends AbstractHelp> component)
+	public Button helpLink(String label,
+			Class<? extends AbstractHelp<MANDANT, BENUTZER>> component)
 	{
 		Button button = new Button(label);
 		button.addThemeVariants(ButtonVariant.LUMO_TERTIARY,
 				ButtonVariant.LUMO_SMALL);
-		button.addClickListener(e -> helpDialog.show(component,null));
+		button.addClickListener(e -> helpDialog.show(component, null, false));
 		return button;
 	}
 
-	public Button helpLink(String label, Class<? extends AbstractHelp> component,
-			String param)
+	public Button helpLink(String label,
+			Class<? extends AbstractHelp<MANDANT, BENUTZER>> component, String param)
 	{
 		Button button = new Button(label);
 		button.addThemeVariants(ButtonVariant.LUMO_TERTIARY,
 				ButtonVariant.LUMO_SMALL);
-		button.addClickListener(e -> helpDialog.show(component, param));
+		button.addClickListener(e -> helpDialog.show(component, param, false));
 		return button;
 	}
 

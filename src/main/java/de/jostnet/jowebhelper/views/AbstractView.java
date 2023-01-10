@@ -35,7 +35,8 @@ public abstract class AbstractView<BEAN extends AbstractEntity,
 
 	private List<VerticalLayout> layouts = new ArrayList<>();
 
-	public AbstractView(	ViewDialogTool<BEAN, BINDER, REPO, MANDANT, SESSION, BENUTZER> vdt)
+	public AbstractView(
+			ViewDialogTool<BEAN, BINDER, REPO, MANDANT, SESSION, BENUTZER> vdt)
 	{
 		this.vdt = vdt;
 	}
@@ -232,6 +233,7 @@ public abstract class AbstractView<BEAN extends AbstractEntity,
 		vdt.fireCanceledEvent();
 	}
 
-	public abstract Class<? extends AbstractHelp> getHelpClass();
-	
+	public abstract Class<? extends AbstractHelp<MANDANT, BENUTZER>>
+			getHelpClass();
+
 }
