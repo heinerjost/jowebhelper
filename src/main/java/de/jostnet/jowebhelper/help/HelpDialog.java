@@ -93,6 +93,7 @@ public abstract class HelpDialog<MANDANT extends IMandant,
 		Scroller contentScroller = new Scroller(content);
 		contentScroller.setScrollDirection(ScrollDirection.VERTICAL);
 		content.setWidthFull();
+		contentScroller.setWidthFull();
 		layout.add(contentScroller);
 
 		add(layout);
